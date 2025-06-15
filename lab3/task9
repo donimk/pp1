@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int SIZE = 4;
+    int matrix[SIZE][SIZE];
+
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+
+    cout << "\nMain: ";
+    for (int i = 0; i < SIZE; i++) {
+        cout << matrix[i][i] << " ";
+    }
+
+    cout << "\nSecondary: ";
+    for (int i = 0; i < SIZE; i++) {
+        cout << matrix[i][SIZE - 1 - i] << " ";
+    }
+
+    cout << endl;
+    return 0;
+}
