@@ -1,0 +1,32 @@
+#include <iostream>
+#include <stack>
+#include <string>
+
+int main() {
+    std::string expression;
+    std::cout << "Enter the expression: ";
+    std::getline(std::cin, expression); 
+
+    std::stack<char> brackets;
+    bool balanced = true;
+
+    for (char ch : expression) {
+        if (ch == '(') {
+            brackets.push(ch);
+        } else if (ch == ')') {
+            if (brackets.empty()) {
+                balanced = false; 
+                break;
+            }
+            brackets.pop(); 
+        }
+    }
+
+    if (!brackets.empty()) {
+        balanced = false;
+    }
+
+    std::cout << (balanced ? "Correct" : "Incorrect") << "\n";
+
+    return 0;
+}
