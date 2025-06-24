@@ -1,0 +1,30 @@
+#include <iostream>
+#include <set>
+
+int main() {
+    std::set<int> numbers;
+    int input;
+
+    std::cout << "Enter 10 numbers:\n";
+    for (int i = 0; i < 10; ++i) {
+        std::cin >> input;
+        numbers.insert(input); 
+    }
+
+    std::cout << "Enter a number for search: ";
+    std::cin >> input;
+
+    if (numbers.find(input) != numbers.end()) {
+        std::cout << "Number " << input << " found in a set.\n";
+    } else {
+        std::cout << "Number " << input << " not found in a set.\n";
+    }
+
+    std::cout << "Elements of set: ";
+    for (std::set<int>::iterator it = numbers.begin(); it != numbers.end(); ++it) {
+        std::cout << *it << " ";
+    }
+    std::cout << "\n";
+
+    return 0;
+}
