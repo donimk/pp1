@@ -21,10 +21,8 @@ int main() {
     }
 
     std::cout << "Elements of set: ";
-    for (std::set<int>::iterator it = numbers.begin(); it != numbers.end(); ++it) {
-        std::cout << *it << " ";
-    }
-    std::cout << "\n";
-
+    for(int num : numbers){
+			 std::cout << num << " ";
+		}
     return 0;
 }
