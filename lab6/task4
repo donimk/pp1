@@ -1,0 +1,23 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    vector<int> arr = {4, 1, 2, 4, 6, 4, 3};
+    int value_to_count = 4;
+
+    int frequency = count(arr.begin(), arr.end(), value_to_count);
+
+
+    int minimum = *min_element(arr.begin(), arr.end());
+    int maximum = *max_element(arr.begin(), arr.end());
+
+    
+    cout << "Count of " << value_to_count << ": " << frequency << endl;
+    cout << "Min: " << minimum << endl;
+    cout << "Max: " << maximum << endl;
+
+    return 0;
+}
