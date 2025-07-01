@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int power(int a, int b) {
+    if (b == 0) {
+        return 1;
+    }
+    return a * power(a, b - 1);
+}
+
+int main() {
+    int a, b;
+    cout << "Enter two integers a and b (0 <= a, b <= 10): ";
+    cin >> a >> b;
+
+    if (a < 0 || a > 10 || b < 0 || b > 10) {
+        cout << "Error: Values must be between 0 and 10!" << endl;
+        return 1;
+    }
+
+    int result = power(a, b);
+    cout << "Output: " << result << endl;
+
+    return 0;
+}
