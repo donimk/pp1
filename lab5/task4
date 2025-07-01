@@ -1,0 +1,29 @@
+#include <iostream>
+#include <queue>
+#include <string>
+using namespace std;
+
+int main() {
+    queue<string> ticketQueue;
+    string name;
+    int count;
+
+    cout << "Enter the number of names: ";
+    cin >> count;
+    cin.ignore(); 
+
+    cout << "Enter " << count << " names:" << endl;
+
+    for (int i = 0; i < count; ++i) {
+        getline(cin, name);
+        ticketQueue.push(name);
+    }
+
+
+    while (!ticketQueue.empty()) {
+        cout << "Serving: " << ticketQueue.front() << endl;
+        ticketQueue.pop();
+    }
+
+    return 0;
+}
